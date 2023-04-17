@@ -10,11 +10,11 @@ body {
     font-family: "League Spartan", sans-serif;
 }
 
-body, #app{
+body,
+#app {
     min-width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }

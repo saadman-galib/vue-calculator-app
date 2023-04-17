@@ -1,7 +1,12 @@
 <template>
     <div class="theme-toggle-container">
         <p>Theme</p>
-        <div class="theme-toggle"><Theme /><Theme /><Theme /></div>
+        <div class="theme-toggle">
+            <Theme start="true" @click="changePosition(0)" />
+            <Theme @click="changePosition(1)" />
+            <Theme end="true" @click="changePosition(2)" />
+            <div class="theme-toggle-ball" :style="{ left: leftPos }"></div>
+        </div>
     </div>
 </template>
 
@@ -13,6 +18,7 @@ export default {
     data() {
         return {
             // write your data here
+            leftPos: 4,
         };
     },
     components: {
@@ -20,6 +26,9 @@ export default {
     },
     methods: {
         // write your methods here
+        changePosition(index) {
+            this.leftPos = 20 * index + 4 + index + "px";
+        },
     },
     computed: {
         // write your computed properties here
@@ -53,5 +62,16 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.theme-toggle-ball {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    cursor: pointer;
+    transition: 0.2s;
 }
 </style>
