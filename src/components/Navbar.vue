@@ -41,7 +41,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     /*background: #6f6c6c;*/
-    background: greenyellow;
+    /* background: greenyellow; */
 }
 
 .nav-left-part h2{

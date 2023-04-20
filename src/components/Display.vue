@@ -1,5 +1,5 @@
 <template>
-    <div class="display-container">okk</div>
+    <div class="display-container"><p>1234</p></div>
 </template>
 
 <script>
@@ -25,13 +25,17 @@ export default {
 <style>
 /* write your styles here */
 .display-container {
-    background: #6f6c6c;
+    background: #181f32;
     min-width: 100%;
     /* min-height: 100%; */
     height: 100%;   
-    max-height: 150px;
+    max-height: 130px;
     border-radius: 10px;
     padding: 8px;
-    margin: 16px auto;
+    margin: 30px auto;
+}
+
+.display-container p{
+
 }
 </style>

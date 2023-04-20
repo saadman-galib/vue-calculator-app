@@ -1,15 +1,13 @@
 <template>
-    <div>
-        <div class="container">
-            <Navbar />
-            <Display />
-            <div class="buttons-container">
-                <Button
-                    v-for="button in buttonList"
-                    :key="button.index"
-                    :button="button"
-                />
-            </div>
+    <div class="container">
+        <Navbar />
+        <Display />
+        <div class="buttons-container">
+            <Button
+                v-for="button in buttonList"
+                :key="button.index"
+                :button="button"
+            />
         </div>
     </div>
 </template>
@@ -65,15 +63,20 @@ export default {
 /* write your styles here */
 .container {
     /*background: whitesmoke; */
-    width: 550px;
-    height: 700px;
+    width: 600px;
+    height: 750px;
     border-radius: 10px;
     padding: 8px;
 }
 
 .buttons-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    background: #181f32;
+    border-radius: 12px;
+    padding: 30px 23px 50px 23px;
+    height: 520px;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 108px);
+    grid-gap: 28px;
 }
 </style>

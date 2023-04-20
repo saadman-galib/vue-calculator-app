@@ -35,21 +35,26 @@ export default {
 <style>
 /* write your styles here */
 .button {
-    width: 110px;
-    height: 70px;
-    background: #3a3a3a;
+    /*min-width: 110px; */
+    /*min-height: 70px; */
+    /* width: 87.3%;
+    height: 81.4%; */
+    min-width: 100%;
+    min-height: 100%;
+    background: #e6e5da;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 12px;
-    box-shadow: 0 5px 0 0 #000000;
+    box-shadow: 0 5px 0 0 #b4a398;
     margin: 8px;
     cursor: pointer;
 }
 
 .button p {
-    color: #fff;
-    font-size: 32px;
+    color: #41485a;
+    font-size: 45px;
     font-weight: 700;
+    transform: translateY(3px);
 }
 </style>
