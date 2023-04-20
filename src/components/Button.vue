@@ -1,5 +1,5 @@
 <template>
-    <div class="button">
+    <div class="button" :style="{ 'grid-column': changeWidth() }">
         <p>{{ button.data }}</p>
     </div>
 </template>
@@ -8,8 +8,7 @@
 export default {
     name: "App",
     data() {
-        return {
-        };
+        return {};
     },
     props: {
         button: {
@@ -21,7 +20,13 @@ export default {
         },
     },
     methods: {
-        // write your methods here
+        changeWidth() {
+            if (this.button.data == "RESET" || this.button.data == "=") {
+                return "span 2";
+            } else {
+                return "span 1";
+            }
+        },
     },
     computed: {
         // write your computed properties here
