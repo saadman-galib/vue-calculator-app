@@ -7,6 +7,7 @@
                 v-for="button in buttonList"
                 :key="button.index"
                 :button="button"
+                
             />
         </div>
     </div>
@@ -72,7 +73,7 @@ export default {
 .buttons-container {
     background: #181f32;
     border-radius: 12px;
-    padding: 30px 23px 50px 23px;
+    padding: 30px 25px 50px 25px;
     height: 520px;
     display: grid;
     grid-template-rows: repeat(5, 1fr);

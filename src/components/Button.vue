@@ -1,6 +1,6 @@
 <template>
-    <div class="button" :style="{ 'grid-column': changeWidth() }">
-        <p>{{ button.data }}</p>
+    <div class="button" :style="{ 'grid-column': changeWidth() }" @click="handleClick()">
+        <p :style="{ 'font-size': changeFontSize() }">{{ button.data }}</p>
     </div>
 </template>
 
@@ -26,6 +26,16 @@ export default {
             } else {
                 return "span 1";
             }
+        },
+        changeFontSize() {
+            if (this.button.data.length > 1) {
+                return "30px";
+            } else {
+                return "40px";
+            }
+        },
+        handleClick() {
+            this.$emit("handleClick", this.button.data);
         },
     },
     computed: {
@@ -58,7 +68,6 @@ export default {
 
 .button p {
     color: #41485a;
-    font-size: 45px;
     font-weight: 700;
     transform: translateY(3px);
 }
