@@ -73,5 +73,6 @@ export default {
     position: absolute;
     cursor: pointer;
     transition: 0.2s;
+    left: 4px;
 }
 </style>

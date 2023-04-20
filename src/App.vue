@@ -2,12 +2,15 @@
     <div>
         <div class="container">
             <Navbar />
+            <Display />
+            <div class="buttons-container"></div>
         </div>
     </div>
 </template>
 
 <script>
 import Navbar from "./components/Navbar.vue";
+import Display from "./components/Display.vue";
 
 export default {
     name: "App",
@@ -15,7 +18,8 @@ export default {
         return {};
     },
     components: {
-        Navbar: Navbar,
+        Navbar,
+        Display,
     },
     methods: {
         // write your methods here
@@ -31,7 +35,7 @@ export default {
 <style>
 /* write your styles here */
 .container {
-    background: #6f6c6c;
+    /*background: whitesmoke; */
     width: 550px;
     height: 700px;
     border-radius: 10px;
