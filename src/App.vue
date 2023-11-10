@@ -57,6 +57,10 @@ export default {
                 case "DEL":
                     this.display = this.deleteLastChar;
                     break;
+                case "RESET":
+                    this.display = '0'
+                    break;
+                
                 default:
                     if (this.display === '0') {
                         this.display = button
