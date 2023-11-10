@@ -10,12 +10,19 @@ export default {
     data() {
         return {
             // write your data here
-            value: 0,
+            value: this.display,
         };
     },
+    props: {
+        display: {
+            required: true
+        }
+    }, 
     methods: {
         // write your methods here
         changeValue() {
+            this.value = this.display
+            
             if (this.value > 999) {
                 let commas = this.value.toLocaleString("en-US");
                 return commas;

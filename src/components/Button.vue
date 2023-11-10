@@ -1,7 +1,11 @@
 <template>
-    <div class="button" :style="{ 'grid-column': changeWidth() }" @click="handleClick()">
+    <button
+        class="button"
+        :style="{ 'grid-column': changeWidth() }"
+        @click="handleClick()"
+    >
         <p :style="{ 'font-size': changeFontSize() }">{{ button.data }}</p>
-    </div>
+    </button>
 </template>
 
 <script>
@@ -64,6 +68,12 @@ export default {
     box-shadow: 0 5px 0 0 #b4a398;
     margin: 8px;
     cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.button:focus{
+    box-shadow: 0 4px 0 0 #b4a398;
 }
 
 .button p {

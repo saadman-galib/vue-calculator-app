@@ -1,13 +1,13 @@
 <template>
     <div class="container">
         <Navbar />
-        <Display />
+        <Display :display="this.display" />
         <div class="buttons-container">
             <Button
                 v-for="button in buttonList"
                 :key="button.index"
                 :button="button"
-                
+                @handleClick="calc"
             />
         </div>
     </div>
@@ -42,6 +42,7 @@ export default {
                 { index: 17, data: "RESET" },
                 { index: 18, data: "=" },
             ],
+            display: '0',
         };
     },
     components: {
@@ -50,18 +51,34 @@ export default {
         Button,
     },
     methods: {
-        // write your methods here
+        calc(button) {
+            // if (button === '+' || button === '-' || button)
+            switch (button) {
+                case "DEL":
+                    this.display = this.deleteLastChar;
+                    break;
+                default:
+                    if (this.display === '0') {
+                        this.display = button
+                    }
+                    else {
+                        
+                        this.display += button;
+                    }
+            }
+        },
     },
     computed: {
-        // write your computed properties here
-    },
-    mounted() {
-        // write your code here
-    },
+        deleteLastChar() {
+            if (this.display.length === 1) {
+                return '0'
+            }
+            return this.display.slice(0, -1)
+        }
+    }
 };
 </script>
 <style>
-/* write your styles here */
 .container {
     /*background: whitesmoke; */
     width: 600px;
