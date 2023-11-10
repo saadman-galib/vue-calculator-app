@@ -42,7 +42,7 @@ export default {
                 { index: 17, data: "RESET" },
                 { index: 18, data: "=" },
             ],
-            display: '0',
+            display: "0",
         };
     },
     components: {
@@ -58,15 +58,16 @@ export default {
                     this.display = this.deleteLastChar;
                     break;
                 case "RESET":
-                    this.display = '0'
+                    this.display = "0";
                     break;
-                
+                case "=":
+                    this.display = this.convertCrossToMultiplication
+                    this.display = eval(this.display).toString();
+                    break;
                 default:
-                    if (this.display === '0') {
-                        this.display = button
-                    }
-                    else {
-                        
+                    if (this.display === "0") {
+                        this.display = button;
+                    } else {
                         this.display += button;
                     }
             }
@@ -75,11 +76,14 @@ export default {
     computed: {
         deleteLastChar() {
             if (this.display.length === 1) {
-                return '0'
+                return "0";
             }
-            return this.display.slice(0, -1)
+            return this.display.slice(0, -1);
+        },
+        convertCrossToMultiplication() {
+            return this.display.replace("x", "*")
         }
-    }
+    },
 };
 </script>
 <style>
