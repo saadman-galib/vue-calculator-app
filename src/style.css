@@ -38,3 +38,7 @@ body,
     justify-content: center;
     align-items: center;
 }
+
+[v-cloak] {
+    display: none;
+}
