@@ -1,6 +1,7 @@
 <template>
     <button
-        class="button"
+    class="button"
+        :class="buttonType"
         :style="{ 'grid-column': changeWidth() }"
         @click="handleClick()"
     >
@@ -12,14 +13,16 @@
 export default {
     name: "App",
     data() {
-        return {};
+        return {
+            
+        };
     },
     props: {
         button: {
             type: Object,
             default: {
                 index: 1,
-                data: "0",
+                data: "7",
             },
         },
     },
@@ -43,7 +46,9 @@ export default {
         },
     },
     computed: {
-        // write your computed properties here
+        buttonType() {
+            return this.button.data == "RESET" || this.button.data == 'DEL' ? 'btn-reset': this.button.data == '=' ? 'btn-equal' : ''
+        }
     },
     mounted() {
         // write your code here
@@ -60,25 +65,55 @@ export default {
     height: 81.4%; */
     min-width: 100%;
     min-height: 100%;
-    background: #e6e5da;
+    background: var(--normal-btn-color);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 12px;
-    box-shadow: 0 5px 0 0 #b4a398;
+    box-shadow: 0 5px 0 0 var(--normal-btn-shadow);
     margin: 8px;
     cursor: pointer;
     outline: none;
     border: none;
+    transition: 0;
 }
 
-.button:focus{
-    box-shadow: 0 4px 0 0 #b4a398;
+.button:hover{
+    background: var(--normal-btn-hover);
 }
+
+/* .button:focus{
+    box-shadow: 0 4px 0 0 var(----normal-btn-shadow);
+} */
 
 .button p {
-    color: #41485a;
+    color: var(--text-color);
     font-weight: 700;
     transform: translateY(3px);
 }
+
+.btn-reset{
+    background: var(--reset-btn-color);
+    box-shadow: 0 5px 0 0 var(--reset-btn-shadow);
+}
+
+.btn-reset:hover{
+    background: var(--reset-btn-hover);
+}
+
+.btn-reset p, 
+.btn-equal p{
+    color: var(--reset-btn-text-color)
+}
+
+.btn-equal{
+    background: var(--equal-btn-color);
+    box-shadow: 0 5px 0 0 var(--equal-btn-shadow);
+}
+
+.btn-equal:hover{
+    background: var(--equal-btn-hover);
+}
+
+
 </style>

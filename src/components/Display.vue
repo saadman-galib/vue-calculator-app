@@ -9,7 +9,6 @@ export default {
     name: "App",
     data() {
         return {
-            // write your data here
             value: this.display,
         };
     },
@@ -19,33 +18,28 @@ export default {
         }
     }, 
     methods: {
-        // write your methods here
+        
         changeValue() {
             this.value = this.display
             
-            if (this.value > 999) {
-                let commas = this.value.toLocaleString("en-US");
-                return commas;
-            } else {
-                return this.value;
-            }
+            // if (this.value > 999) {
+            //     let commas = this.value.toLocaleString("en-US");
+            //     return commas;
+            // } else {
+            //     return this.value;
+            // }
+            return this.value
         },
     },
-    computed: {
-        // write your computed properties here
-    },
-    mounted() {
-        // write your code here
-    },
+   
 };
 </script>
 
 <style>
-/* write your styles here */
+
 .display-container {
-    background: #181f32;
+    background: var(--display-bg);
     min-width: 100%;
-    /* min-height: 100%; */
     height: 100%;
     max-height: 130px;
     border-radius: 10px;
@@ -58,7 +52,7 @@ export default {
 }
 
 .display-container p {
-    color: #fff;
+    color: var(--display-text-color);
     font-size: 60px;
     font-weight: 700;
 }

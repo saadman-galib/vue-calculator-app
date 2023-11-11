@@ -102,7 +102,6 @@ export default {
 </script>
 <style>
 .container {
-    /*background: whitesmoke; */
     width: 600px;
     height: 750px;
     border-radius: 10px;
@@ -110,7 +109,7 @@ export default {
 }
 
 .buttons-container {
-    background: #181f32;
+    background: var(--btn-container-bg);
     border-radius: 12px;
     padding: 30px 25px 50px 25px;
     height: 520px;

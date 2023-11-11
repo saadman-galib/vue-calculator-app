@@ -26,25 +26,20 @@ export default {
         },
     },
     methods: {
-        // write your methods here
+     
         isStart() {
             return this.start ? "50%" : "0%";
         },
         isEnd() {
             return this.end ? "50%" : "0%";
         },
+        
     },
-    computed: {
-        // write your computed properties here
-    },
-    mounted() {
-        // write your code here
-    },
+   
 };
 </script>
 
 <style>
-/* write your styles here */
 .theme {
     background: #fff;
     width: 22px;

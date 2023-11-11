@@ -45,7 +45,7 @@ export default {
 }
 
 .nav-left-part h2{
-    color: #fff;
+    color: var(--display-text-color);
     font-size: 32px;
     font-weight: 700;
 }
