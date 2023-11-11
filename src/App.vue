@@ -52,8 +52,22 @@ export default {
     },
     methods: {
         calc(button) {
-            // if (button === '+' || button === '-' || button)
             switch (button) {
+                case "+":
+                case "-":
+                case "x":
+                case "/":
+                    if (
+                        this.display.slice(-1) === "+" ||
+                        this.display.slice(-1) === "-" ||
+                        this.display.slice(-1) === "x" ||
+                        this.display.slice(-1) === "/"
+                    ) {
+                        this.display = this.display.slice(0, -1) + button;
+                    } else {
+                        this.display += button;
+                    }
+                    break;
                 case "DEL":
                     this.display = this.deleteLastChar;
                     break;
@@ -61,7 +75,7 @@ export default {
                     this.display = "0";
                     break;
                 case "=":
-                    this.display = this.convertCrossToMultiplication
+                    this.display = this.convertCrossToMultiplication;
                     this.display = eval(this.display).toString();
                     break;
                 default:
@@ -81,8 +95,8 @@ export default {
             return this.display.slice(0, -1);
         },
         convertCrossToMultiplication() {
-            return this.display.replace("x", "*")
-        }
+            return this.display.replace("x", "*");
+        },
     },
 };
 </script>
