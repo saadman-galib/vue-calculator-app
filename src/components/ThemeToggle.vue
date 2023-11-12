@@ -2,9 +2,9 @@
     <div class="theme-toggle-container">
         <p>Theme</p>
         <div class="theme-toggle">
-            <Theme :start="true" @click="changePosition(0)" />
-            <Theme @click="changePosition(1)" />
-            <Theme :end="true" @click="changePosition(2)" />
+            <Theme :start="true" @click="changePosition(0)" :index="1" />
+            <Theme @click="changePosition(1)" :index="2" />
+            <Theme :end="true" @click="changePosition(2)" :index="3" />
             <div class="theme-toggle-ball" :style="{ left: leftPos }"></div>
         </div>
     </div>
@@ -171,8 +171,9 @@ export default {
     font-weight: 700;
     margin-top: auto;
     margin-bottom: auto;
-    margin-right: 28px;
+    margin-right: 22px;
     transition: 0.7s;
+    letter-spacing: 0.6px;
 }
 
 .theme-toggle {
