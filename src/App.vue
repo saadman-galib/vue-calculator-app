@@ -119,4 +119,21 @@ export default {
     grid-gap: 28px;
     transition: 0.7s;
 }
+
+@media (max-width: 645px) {
+    .container{
+        width: 340px;
+        height: auto;
+        margin: 25px auto;
+        
+        
+    }
+    .buttons-container{
+        height: 400px;
+        padding: 15px 12.5px 35px 12.5px;
+        grid-gap: 14px;
+        grid-template-columns: repeat(4, 60px);
+
+    }
+}
 </style>

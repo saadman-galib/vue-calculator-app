@@ -41,9 +41,11 @@ export default {
 
 <style>
 .theme {
-    background: #fff;
+    background: var(--btn-container-bg);
     width: 22px;
     height: 22px;
     cursor: pointer;
 }
+
+
 </style>

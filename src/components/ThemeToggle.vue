@@ -2,9 +2,9 @@
     <div class="theme-toggle-container">
         <p>Theme</p>
         <div class="theme-toggle">
-            <Theme start="true" @click="changePosition(0)" />
+            <Theme :start="true" @click="changePosition(0)" />
             <Theme @click="changePosition(1)" />
-            <Theme end="true" @click="changePosition(2)" />
+            <Theme :end="true" @click="changePosition(2)" />
             <div class="theme-toggle-ball" :style="{ left: leftPos }"></div>
         </div>
     </div>
