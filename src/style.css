@@ -27,10 +27,9 @@
 body {
     font-family: "League Spartan", sans-serif;
     background-color: var(--bg-color);
-    transition: 1s;
+    transition: 0.7s background;
 }
 
-body,
 #app {
     min-width: 100%;
     min-height: 100vh;

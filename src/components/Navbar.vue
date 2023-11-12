@@ -20,7 +20,7 @@ export default {
         };
     },
     components: {
-        ThemeToggle
+        ThemeToggle,
     },
     methods: {
         // write your methods here
@@ -44,11 +44,10 @@ export default {
     /* background: greenyellow; */
 }
 
-.nav-left-part h2{
+.nav-left-part h2 {
     color: var(--display-text-color);
     font-size: 32px;
     font-weight: 700;
+    transition: 0.7s;
 }
-
-
 </style>

@@ -117,5 +117,6 @@ export default {
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(4, 108px);
     grid-gap: 28px;
+    transition: 0.7s;
 }
 </style>

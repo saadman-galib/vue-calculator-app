@@ -1,6 +1,6 @@
 <template>
     <button
-    class="button"
+        class="button"
         :class="buttonType"
         :style="{ 'grid-column': changeWidth() }"
         @click="handleClick()"
@@ -13,9 +13,7 @@
 export default {
     name: "App",
     data() {
-        return {
-            
-        };
+        return {};
     },
     props: {
         button: {
@@ -47,8 +45,12 @@ export default {
     },
     computed: {
         buttonType() {
-            return this.button.data == "RESET" || this.button.data == 'DEL' ? 'btn-reset': this.button.data == '=' ? 'btn-equal' : ''
-        }
+            return this.button.data == "RESET" || this.button.data == "DEL"
+                ? "btn-reset"
+                : this.button.data == "="
+                ? "btn-equal"
+                : "";
+        },
     },
     mounted() {
         // write your code here
@@ -75,10 +77,10 @@ export default {
     cursor: pointer;
     outline: none;
     border: none;
-    transition: 0;
+    transition: 0.7s;
 }
 
-.button:hover{
+.button:hover {
     background: var(--normal-btn-hover);
 }
 
@@ -90,30 +92,29 @@ export default {
     color: var(--text-color);
     font-weight: 700;
     transform: translateY(3px);
+    transition: 0.7s;
 }
 
-.btn-reset{
+.btn-reset {
     background: var(--reset-btn-color);
     box-shadow: 0 5px 0 0 var(--reset-btn-shadow);
 }
 
-.btn-reset:hover{
+.btn-reset:hover {
     background: var(--reset-btn-hover);
 }
 
-.btn-reset p, 
-.btn-equal p{
-    color: var(--reset-btn-text-color)
+.btn-reset p,
+.btn-equal p {
+    color: var(--reset-btn-text-color);
 }
 
-.btn-equal{
+.btn-equal {
     background: var(--equal-btn-color);
     box-shadow: 0 5px 0 0 var(--equal-btn-shadow);
 }
 
-.btn-equal:hover{
+.btn-equal:hover {
     background: var(--equal-btn-hover);
 }
-
-
 </style>

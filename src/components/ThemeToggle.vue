@@ -172,6 +172,7 @@ export default {
     margin-top: auto;
     margin-bottom: auto;
     margin-right: 28px;
+    transition: 0.7s;
 }
 
 .theme-toggle {
