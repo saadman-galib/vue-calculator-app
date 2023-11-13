@@ -1,6 +1,8 @@
 <template>
     <div class="display-container">
-        <p>{{ changeValue() }}</p>
+        <p :style="{ fontSize: textSize + 'px' }">
+            {{ changeValue() }}
+        </p>
     </div>
 </template>
 
@@ -10,6 +12,7 @@ export default {
     data() {
         return {
             value: this.display,
+            textSize: 62,
         };
     },
     props: {
@@ -18,15 +21,54 @@ export default {
         },
     },
     methods: {
+        calculateFontSize(
+            currentFontSize,
+            singleLetterWidthPerPx,
+            currentWidth,
+            maxWidth
+        ) {
+            if (currentWidth < maxWidth) {
+                console.log("under 15");
+                return 62;
+            }
+
+            console.log("not more");
+            const newFontSize =
+                maxWidth / (singleLetterWidthPerPx * this.value.length);
+
+            return newFontSize;
+        },
         changeValue() {
             this.value = this.display;
-
+            // if (this.value.length > 8
+            // // 16
+            // ) {
+            //     this.textSize = 40 - (this.value.length - 8) * 2.2;
+            //     console.log(this.fontSize);
+            // }
             // if (this.value > 999) {
             //     let commas = this.value.toLocaleString("en-US");
             //     return commas;
             // } else {
             //     return this.value;
             // }
+
+            const currentFontSize = this.textSize;
+            const singleLetterWidthPerPx = 0.562506;
+            const currentWidth =
+                singleLetterWidthPerPx * currentFontSize * this.value.length;
+            // const maxLetters = 15;
+            const maxWidth = 523.13;
+            const additionalLetter = 1;
+            console.log(currentWidth);
+
+            this.textSize = this.calculateFontSize(
+                currentFontSize,
+                singleLetterWidthPerPx,
+                currentWidth,
+                maxWidth
+            );
+
             return this.value;
         },
     },
@@ -47,6 +89,7 @@ export default {
     justify-content: flex-end;
     padding: 32px;
     transition: 0.7s;
+    overflow: hidden;
 }
 
 .display-container p {
@@ -59,7 +102,7 @@ export default {
 
 @media (max-width: 645px) {
     .display-container p {
-        font-size: 40px;
+        /* font-size: 40px; */
         height: 30px;
     }
 }

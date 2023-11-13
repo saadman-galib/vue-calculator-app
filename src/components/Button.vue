@@ -81,16 +81,17 @@ export default {
     font-size: 40px;
 }
 
-.btn-reset {
+.btn-reset, .btn-dlt {
     background: var(--reset-btn-color);
     box-shadow: 0 5px 0 0 var(--reset-btn-shadow);
 }
 
-.btn-reset:hover {
+.btn-reset:hover, .btn-dlt:hover {
     background: var(--reset-btn-hover);
 }
 
 .btn-reset p,
+.btn-dlt p,
 .btn-equal p {
     color: var(--reset-btn-text-color);
 }
