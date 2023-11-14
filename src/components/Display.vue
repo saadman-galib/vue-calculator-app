@@ -13,6 +13,7 @@ export default {
         return {
             value: this.display,
             textSize: 62,
+            isDesktop: window.innerWidth > 645,
         };
     },
     props: {
@@ -57,7 +58,6 @@ export default {
             const singleLetterWidthPerPx = 0.562506;
             const currentWidth =
                 singleLetterWidthPerPx * currentFontSize * this.value.length;
-            // const maxLetters = 15;
             const maxWidth = 523.13;
             const additionalLetter = 1;
             console.log(currentWidth);
@@ -97,13 +97,13 @@ export default {
     font-size: 60px;
     font-weight: 700;
     transition: 0.7s;
-    height: 45px;
+    /* height: 45px; */
 }
 
-@media (max-width: 645px) {
+/* @media (max-width: 645px) {
     .display-container p {
-        /* font-size: 40px; */
+         font-size: 40px; 
         height: 30px;
     }
-}
+} */
 </style>
