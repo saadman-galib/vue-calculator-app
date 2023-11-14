@@ -131,9 +131,8 @@ export default {
     .buttons-container{
         height: 400px;
         padding: 15px 12.5px 35px 12.5px;
-        grid-gap: 14px;
+        grid-gap: 18px 14px;
         grid-template-columns: repeat(4, 60px);
-
     }
 }
 </style>

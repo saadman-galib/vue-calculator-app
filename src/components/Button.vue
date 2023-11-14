@@ -61,7 +61,7 @@ export default {
     align-items: center;
     justify-content: center;
     border-radius: 12px;
-    box-shadow: 0 5px 0 0 var(--normal-btn-shadow);
+    box-shadow: 0 4px 0 0 var(--normal-btn-shadow);
     margin: 8px;
     cursor: pointer;
     outline: none;
@@ -83,7 +83,7 @@ export default {
 
 .btn-reset, .btn-dlt {
     background: var(--reset-btn-color);
-    box-shadow: 0 5px 0 0 var(--reset-btn-shadow);
+    box-shadow: 0 4px 0 0 var(--reset-btn-shadow);
 }
 
 .btn-reset:hover, .btn-dlt:hover {
@@ -98,7 +98,7 @@ export default {
 
 .btn-equal {
     background: var(--equal-btn-color);
-    box-shadow: 0 5px 0 0 var(--equal-btn-shadow);
+    box-shadow: 0 4px 0 0 var(--equal-btn-shadow);
 }
 
 .btn-equal:hover {
@@ -111,6 +111,10 @@ export default {
 }
 
 @media (max-width: 645px) {
+    .button{
+        border-radius: 6px;
+    }
+
     .button p {
         font-size: 30px;
     }
