@@ -39,18 +39,7 @@ export default {
         },
         changeValue() {
             this.value = this.display;
-            // if (this.value.length > 8
-            // // 16
-            // ) {
-            //     this.textSize = 40 - (this.value.length - 8) * 2.2;
-            //     console.log(this.fontSize);
-            // }
-            // if (this.value > 999) {
-            //     let commas = this.value.toLocaleString("en-US");
-            //     return commas;
-            // } else {
-            //     return this.value;
-            // }
+
             const currentFontSize = this.textSize;
             const singleLetterWidthPerPx = 0.562506;
 
@@ -80,6 +69,19 @@ export default {
                     maxWidth
                 );
             }
+
+            // if (this.value.length > 8
+            // // 16
+            // ) {
+            //     this.textSize = 40 - (this.value.length - 8) * 2.2;
+            //     console.log(this.fontSize);
+            // }
+            // if (this.value > 999) {
+            //     let commas = this.value.toLocaleString("en-US");
+            //     return commas;
+            // } else {
+            //     return this.value;
+            // }
 
             return this.value;
         },
