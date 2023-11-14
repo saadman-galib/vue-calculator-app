@@ -23,7 +23,6 @@ export default {
     },
     methods: {
         calculateFontSize(
-            currentFontSize,
             singleLetterWidthPerPx,
             currentWidth,
             maxWidth
