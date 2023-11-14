@@ -12,8 +12,8 @@ export default {
     data() {
         return {
             value: this.display,
-            textSize: 62,
             isDesktop: window.innerWidth > 645,
+            textSize: this.isDesktop ? 62 : 42,
         };
     },
     props: {
@@ -29,11 +29,9 @@ export default {
             maxWidth
         ) {
             if (currentWidth < maxWidth) {
-                console.log("under 15");
-                return 62;
+                return this.isDesktop ? 62 : 42;
             }
 
-            console.log("not more");
             const newFontSize =
                 maxWidth / (singleLetterWidthPerPx * this.value.length);
 
@@ -53,21 +51,35 @@ export default {
             // } else {
             //     return this.value;
             // }
-
             const currentFontSize = this.textSize;
             const singleLetterWidthPerPx = 0.562506;
-            const currentWidth =
-                singleLetterWidthPerPx * currentFontSize * this.value.length;
-            const maxWidth = 523.13;
-            const additionalLetter = 1;
-            console.log(currentWidth);
 
-            this.textSize = this.calculateFontSize(
-                currentFontSize,
-                singleLetterWidthPerPx,
-                currentWidth,
-                maxWidth
-            );
+            if (this.isDesktop) {
+                const currentWidth =
+                    singleLetterWidthPerPx *
+                    currentFontSize *
+                    this.value.length;
+                const maxWidth = 523.13;
+
+                this.textSize = this.calculateFontSize(
+                    currentFontSize,
+                    singleLetterWidthPerPx,
+                    currentWidth,
+                    maxWidth
+                );
+            } else {
+                const currentWidth =
+                    singleLetterWidthPerPx *
+                    currentFontSize *
+                    this.value.length;
+                const maxWidth = 283.5;
+                this.textSize = this.calculateFontSize(
+                    currentFontSize,
+                    singleLetterWidthPerPx,
+                    currentWidth,
+                    maxWidth
+                );
+            }
 
             return this.value;
         },
@@ -82,7 +94,6 @@ export default {
     height: 100%;
     max-height: 130px;
     border-radius: 10px;
-    padding: 8px;
     margin: 30px auto;
     display: flex;
     align-items: center;
@@ -94,16 +105,20 @@ export default {
 
 .display-container p {
     color: var(--display-text-color);
-    font-size: 60px;
+    font-size: 62px;
     font-weight: 700;
     transition: 0.7s;
     /* height: 45px; */
 }
 
-/* @media (max-width: 645px) {
-    .display-container p {
-         font-size: 40px; 
-        height: 30px;
+@media (max-width: 645px) {
+    .display-container {
+        padding: 26px 20px;
+        height: 110px;
     }
-} */
+
+    .display-container p {
+        font-size: 40px;
+    }
+}
 </style>
