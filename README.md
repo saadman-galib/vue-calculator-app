@@ -1,4 +1,4 @@
-<h1 align="center">Testimonials grid section</h1>
+<h1 align="center">Vue Calculator App</h1>
 
 ## Table of Contents
 
