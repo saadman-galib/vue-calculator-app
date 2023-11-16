@@ -21,19 +21,21 @@ export default {
             required: true,
         },
     },
+    computed: {},
+
     methods: {
-        calculateFontSize(
-            singleLetterWidthPerPx,
-            currentWidth,
-            maxWidth
-        ) {
+        calculateFontSize(singleLetterWidthPerPx, currentWidth, maxWidth) {
             if (currentWidth < maxWidth) {
                 return this.isDesktop ? 62 : 42;
             }
 
             const newFontSize =
                 maxWidth / (singleLetterWidthPerPx * this.value.length);
-
+            // console.log(this.value.length);
+            // console.log(
+            //     "singleLetterWidthPerPx * this.value.length" +
+            //         singleLetterWidthPerPx * this.value.length
+            // );
             return newFontSize;
         },
         changeValue() {
@@ -50,7 +52,6 @@ export default {
                 const maxWidth = 523.13;
 
                 this.textSize = this.calculateFontSize(
-                    currentFontSize,
                     singleLetterWidthPerPx,
                     currentWidth,
                     maxWidth
@@ -62,7 +63,6 @@ export default {
                     this.value.length;
                 const maxWidth = 283.5;
                 this.textSize = this.calculateFontSize(
-                    currentFontSize,
                     singleLetterWidthPerPx,
                     currentWidth,
                     maxWidth
