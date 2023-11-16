@@ -17,9 +17,8 @@
 import Navbar from "./components/Navbar.vue";
 import Display from "./components/Display.vue";
 import Button from "./components/Button.vue";
-import Vue from 'vue';
-import Toastify from 'vue-toastify';
-import 'vue-toastify/src/index.css';
+import { toast } from "vue3-toastify";
+import "vue3-toastify/dist/index.css";
 
 export default {
     name: "App",
@@ -71,6 +70,13 @@ export default {
                         this.display += button;
                     }
                     break;
+                case ".":
+                    if (this.display.slice(-1) === ".") {
+                        toast.error("You cant add two decimal points beside");
+                    } else {
+                        this.display += button;
+                    }
+                    break;
                 case "DEL":
                     this.display = this.deleteLastChar;
                     break;
@@ -84,6 +90,8 @@ export default {
                     ) {
                         this.display = this.convertCrossToMultiplication;
                         this.display = eval(this.display).toString();
+                    } else {
+                        toast.error("Pls add numbers after + - x /");
                     }
                     break;
                 default:
