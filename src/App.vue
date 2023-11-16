@@ -75,8 +75,13 @@ export default {
                     this.display = "0";
                     break;
                 case "=":
-                    this.display = this.convertCrossToMultiplication;
-                    this.display = eval(this.display).toString();
+                    if (
+                        parseInt(this.display.slice(-1)) >= 0 &&
+                        parseInt(this.display.slice(-1)) <= 9
+                    ) {
+                        this.display = this.convertCrossToMultiplication;
+                        this.display = eval(this.display).toString();
+                    }
                     break;
                 default:
                     if (this.display === "0") {
@@ -121,14 +126,12 @@ export default {
 }
 
 @media (max-width: 645px) {
-    .container{
+    .container {
         width: 340px;
         height: auto;
         margin: 25px auto;
-        
-        
     }
-    .buttons-container{
+    .buttons-container {
         height: 400px;
         padding: 15px 12.5px 35px 12.5px;
         grid-gap: 18px 14px;
