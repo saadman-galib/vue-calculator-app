@@ -17,6 +17,9 @@
 import Navbar from "./components/Navbar.vue";
 import Display from "./components/Display.vue";
 import Button from "./components/Button.vue";
+import Vue from 'vue';
+import Toastify from 'vue-toastify';
+import 'vue-toastify/src/index.css';
 
 export default {
     name: "App",
