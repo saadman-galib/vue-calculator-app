@@ -13,7 +13,7 @@
 
 ## Overview
 
-![screenshot](https://github.com/saadman-galib/vue-calculator-app/assets/73209315/1258facb-7554-4a26-8e3a-c453471aa9bc)
+![screenshot](./public/README.jpg)
 
 ## Built With
 
