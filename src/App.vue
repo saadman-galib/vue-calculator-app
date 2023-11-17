@@ -91,7 +91,7 @@ export default {
                         this.display = this.convertCrossToMultiplication;
                         const answer = eval(this.display).toString();
                         if (answer === "NaN") {
-                            this.display = "Moye Moye";
+                            this.display = "Undefined";
                         } else {
                             this.display = answer;
                         }
