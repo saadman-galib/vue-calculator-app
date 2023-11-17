@@ -28,11 +28,13 @@ export default {
             if (currentWidth < maxWidth) {
                 return this.isDesktop ? 62 : 42;
             }
+            else{
 
-            const newFontSize =
-                maxWidth / (singleLetterWidthPerPx * this.value.length);
-                
-            return newFontSize;
+                const newFontSize =
+                    maxWidth / (singleLetterWidthPerPx * this.value.length);
+                    
+                return newFontSize;
+        }
         },
         changeValue() {
             this.value = this.display;
