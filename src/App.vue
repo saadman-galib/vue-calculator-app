@@ -72,7 +72,7 @@ export default {
                     break;
                 case ".":
                     if (this.display.slice(-1) === ".") {
-                        toast.error("You cant add two decimal points beside");
+                        // toast.error("You cant add two decimal points beside");
                     } else {
                         this.display += button;
                     }
@@ -91,7 +91,7 @@ export default {
                         this.display = this.convertCrossToMultiplication;
                         this.display = eval(this.display).toString();
                     } else {
-                        toast.error("Pls add numbers after + - x /");
+                        // toast.error("Pls add numbers after + - x /");
                     }
                     break;
                 default:
