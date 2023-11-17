@@ -72,20 +72,6 @@ export default {
             }
 
             return this.value;
-            
-            // if (this.value.length > 8
-            // // 16
-            // ) {
-            //     this.textSize = 40 - (this.value.length - 8) * 2.2;
-            //     console.log(this.fontSize);
-            // }
-            // if (this.value > 999) {
-            //     let commas = this.value.toLocaleString("en-US");
-            //     return commas;
-            // } else {
-            //     return this.value;
-            // }
-
         },
     },
 };
