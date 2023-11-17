@@ -31,11 +31,7 @@ export default {
 
             const newFontSize =
                 maxWidth / (singleLetterWidthPerPx * this.value.length);
-            // console.log(this.value.length);
-            // console.log(
-            //     "singleLetterWidthPerPx * this.value.length" +
-            //         singleLetterWidthPerPx * this.value.length
-            // );
+                
             return newFontSize;
         },
         changeValue() {
