@@ -71,6 +71,8 @@ export default {
                 );
             }
 
+            return this.value;
+            
             // if (this.value.length > 8
             // // 16
             // ) {
@@ -84,7 +86,6 @@ export default {
             //     return this.value;
             // }
 
-            return this.value;
         },
     },
 };
