@@ -7,8 +7,7 @@
 </template>
 
 <script>
-import debounce from 'lodash/debounce';
-
+import debounce from "lodash/debounce";
 
 export default {
     name: "App",
@@ -27,19 +26,21 @@ export default {
     computed: {},
 
     methods: {
-        debouncedCalculateFontSize: function (singleLetterWidthPerPx, currentWidth, maxWidth) {
+        debouncedCalculateFontSize: debounce(function (
+            singleLetterWidthPerPx,
+            currentWidth,
+            maxWidth
+        ) {
             if (currentWidth < maxWidth) {
                 return this.isDesktop ? 62 : 42;
-            }
-            else{
-
+            } else {
                 const newFontSize =
                     maxWidth / (singleLetterWidthPerPx * this.value.length);
-                    
+
                 return newFontSize;
             }
-
         },
+        50),
         changeValue() {
             this.value = this.display;
 
@@ -72,7 +73,7 @@ export default {
             }
 
             return this.value;
-            
+
             // if (this.value.length > 8
             // // 16
             // ) {
@@ -85,7 +86,6 @@ export default {
             // } else {
             //     return this.value;
             // }
-
         },
     },
 };
