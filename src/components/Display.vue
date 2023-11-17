@@ -27,7 +27,7 @@ export default {
     computed: {},
 
     methods: {
-        debouncedCalculateFontSize: debounce(function (singleLetterWidthPerPx, currentWidth, maxWidth) {
+        debouncedCalculateFontSize: function (singleLetterWidthPerPx, currentWidth, maxWidth) {
             if (currentWidth < maxWidth) {
                 return this.isDesktop ? 62 : 42;
             }
@@ -38,7 +38,7 @@ export default {
                     
                 return newFontSize;
             }
-  }, 200),
+
         },
         changeValue() {
             this.value = this.display;
@@ -72,6 +72,20 @@ export default {
             }
 
             return this.value;
+            
+            // if (this.value.length > 8
+            // // 16
+            // ) {
+            //     this.textSize = 40 - (this.value.length - 8) * 2.2;
+            //     console.log(this.fontSize);
+            // }
+            // if (this.value > 999) {
+            //     let commas = this.value.toLocaleString("en-US");
+            //     return commas;
+            // } else {
+            //     return this.value;
+            // }
+
         },
     },
 };
