@@ -89,7 +89,12 @@ export default {
                         parseInt(this.display.slice(-1)) <= 9
                     ) {
                         this.display = this.convertCrossToMultiplication;
-                        this.display = eval(this.display).toString();
+                        const answer = eval(this.display).toString();
+                        if (answer === NaN) {
+                            this.display = "Moye Moye";
+                        } else {
+                            this.display = answer;
+                        }
                     } else {
                         // toast.error("Pls add numbers after + - x /");
                     }
