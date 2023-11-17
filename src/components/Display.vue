@@ -1,14 +1,12 @@
 <template>
     <div class="display-container">
         <p :style="{ fontSize: textSize + 'px' }">
-            {{ changeValue() }}
+            {{ value }}
         </p>
     </div>
 </template>
 
 <script>
-import debounce from "lodash/debounce";
-
 export default {
     name: "App",
     data() {
@@ -24,7 +22,7 @@ export default {
         },
     },
     methods: {
-        debouncedCalculateFontSize: function (
+        calculateFontSize: async function (
             singleLetterWidthPerPx,
             currentWidth,
             maxWidth
@@ -32,44 +30,37 @@ export default {
             if (currentWidth < maxWidth) {
                 return this.isDesktop ? 62 : 42;
             }
-            const newFontSize =
-                maxWidth / (singleLetterWidthPerPx * this.value.length);
 
-            return newFontSize;
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    const newFontSize =
+                        maxWidth / (singleLetterWidthPerPx * this.value.length);
+                    resolve(newFontSize);
+                }, 0);
+            });
         },
 
-        changeValue() {
+        async changeValue() {
             this.value = this.display;
 
             const currentFontSize = this.textSize;
             const singleLetterWidthPerPx = 0.562506;
 
-            if (this.isDesktop) {
-                const currentWidth =
-                    singleLetterWidthPerPx *
-                    currentFontSize *
-                    this.value.length;
-                const maxWidth = 523.13;
+            const currentWidth =
+                singleLetterWidthPerPx * currentFontSize * this.value.length;
+            const maxWidth = this.isDesktop ? 523.13 : 283.5;
 
-                this.textSize = this.debouncedCalculateFontSize(
+            try {
+                this.textSize = await this.calculateFontSize(
                     singleLetterWidthPerPx,
                     currentWidth,
                     maxWidth
                 );
-            } else {
-                const currentWidth =
-                    singleLetterWidthPerPx *
-                    currentFontSize *
-                    this.value.length;
-                const maxWidth = 283.5;
-                this.textSize = this.debouncedCalculateFontSize(
-                    singleLetterWidthPerPx,
-                    currentWidth,
-                    maxWidth
-                );
+            } catch (error) {
+                console.error("Error calculating font size:", error);
             }
-
-            return this.value;
+            
+            
 
             // if (this.value.length > 8
             // // 16
@@ -84,6 +75,9 @@ export default {
             //     return this.value;
             // }
         },
+    },
+    mounted() {
+        this.changeValue()
     },
     watch: {
         display() {

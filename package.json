@@ -1,20 +1,19 @@
 {
-  "name": "vue-calculator-app",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "lodash": "^4.17.21",
-    "vue": "^3.2.47",
-    "vue3-toastify": "^0.1.14"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^4.1.0",
-    "vite": "^4.2.0"
-  }
+    "name": "vue-calculator-app",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "vue": "^3.2.47",
+        "vue3-toastify": "^0.1.14"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^4.1.0",
+        "vite": "^4.2.0"
+    }
 }
