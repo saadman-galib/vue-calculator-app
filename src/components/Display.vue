@@ -23,24 +23,21 @@ export default {
             required: true,
         },
     },
-    computed: {},
-
     methods: {
-        debouncedCalculateFontSize: debounce(function (
+        debouncedCalculateFontSize: function (
             singleLetterWidthPerPx,
             currentWidth,
             maxWidth
         ) {
             if (currentWidth < maxWidth) {
                 return this.isDesktop ? 62 : 42;
-            } else {
-                const newFontSize =
-                    maxWidth / (singleLetterWidthPerPx * this.value.length);
-
-                return newFontSize;
             }
+            const newFontSize =
+                maxWidth / (singleLetterWidthPerPx * this.value.length);
+
+            return newFontSize;
         },
-        50),
+
         changeValue() {
             this.value = this.display;
 
@@ -88,6 +85,11 @@ export default {
             // }
         },
     },
+    watch: {
+        display() {
+            this.changeValue();
+        },
+    },
 };
 </script>
 
@@ -122,7 +124,7 @@ export default {
     }
 
     .display-container p {
-        font-size: 40px;
+        font-size: 42px;
     }
 }
 </style>
