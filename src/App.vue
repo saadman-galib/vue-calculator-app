@@ -97,7 +97,6 @@ export default {
                 default:
                     if (this.display === "0") {
                         this.display = button;
-                        
                     } else {
                         this.display += button;
                     }
