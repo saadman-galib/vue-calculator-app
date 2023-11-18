@@ -4,7 +4,9 @@
         <div class="theme-toggle">
             <Theme :start="true" @click="changePosition(0)" :index="1" />
             <Theme @click="changePosition(1)" :index="2" />
-            <Theme :end="true" @click="changePosition(2)" :index="3" />
+            <Theme @click="changePosition(2)" :index="3" />
+            <Theme @click="changePosition(3)" :index="4" />
+            <Theme :end="true" @click="changePosition(4)" :index="5" />
             <div class="theme-toggle-ball" :style="{ left: leftPos }"></div>
         </div>
     </div>
@@ -55,6 +57,23 @@ export default {
                     equalBtnHover: "#FF8B38",
                 },
                 {
+                    backgroundColor: "#0D1321",
+                    displayBackground: "#1A2133",
+                    displayTextColor: "#F3F3F3",
+                    textColor: "#A8B3C8",
+                    resetBtnTextColor: "#FFFFFF",
+                    btnContainerBackground: "#2B364E",
+                    normalBtnColor: "#4C5C7B",
+                    normalBtnShadow: "#38425F",
+                    normalBtnHover: "#5F7096",
+                    resetBtnColor: "#E84855",
+                    resetBtnShadow: "#B53E4B",
+                    resetBtnHover: "#F06D7E",
+                    equalBtnColor: "#00B4D8",
+                    equalBtnShadow: "#008DA6",
+                    equalBtnHover: "#33CCFF",
+                },
+                {
                     backgroundColor: "#17062A",
                     displayBackground: "#1E0836",
                     displayTextColor: "#FADF46",
@@ -70,6 +89,23 @@ export default {
                     equalBtnColor: "#00DECF",
                     equalBtnShadow: "#6EF7EF",
                     equalBtnHover: "#94FFF9",
+                },
+                {
+                    backgroundColor: "#2E2E2E",
+                    displayBackground: "#1A1A1A",
+                    displayTextColor: "#D4D4D4",
+                    textColor: "#D4D4D4",
+                    resetBtnTextColor: "#FFFFFF",
+                    btnContainerBackground: "#474747",
+                    normalBtnColor: "#666666",
+                    normalBtnShadow: "#444444",
+                    normalBtnHover: "#999999",
+                    resetBtnColor: "#FF6347",
+                    resetBtnShadow: "#CC4731",
+                    resetBtnHover: "#FF7F66",
+                    equalBtnColor: "#4CAF50",
+                    equalBtnShadow: "#388E3C",
+                    equalBtnHover: "#81C784",
                 },
             ],
         };
